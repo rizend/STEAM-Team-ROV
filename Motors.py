@@ -25,13 +25,14 @@ atexit.register(turnOffMotors)
 
   # takes a motor and a speed (-255,255) and sets the correct direction and speed
 def setMotorSpeed(motor, speed):
+  speed = int(speed)
   absSpeed = speed if speed>=0 else 0-speed
   if speed==0:
     motor.run(Adafruit_MotorHAT.RELEASE)
   elif speed>0:
     motor.run(Adafruit_MotorHAT.FORWARD)
   else:
-    motor.run(Adafruit_MotorHAT.REVERSE)
+    motor.run(Adafruit_MotorHAT.BACKWARD)
   motor.setSpeed(absSpeed)
 
 def strit():
@@ -43,7 +44,7 @@ def strit():
 def setAll(speeds):
   for i in range(0,len(motors)):
     setMotorSpeed(motors[i], speeds[i])
-  print("set motors to ", strit())
+  '''print("set motors to ", strit())'''
 
 def stopAll():
   for motor in motors:

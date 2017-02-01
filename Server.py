@@ -11,10 +11,6 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(Common.addrTuple)
 s.listen(1)
 
-newSpeed1 = 0.0
-newSpeed2 = 0.0
-newSpeed3 = 0.0
-downSpeed = 0.0
 conn = None
 addr = None
 
