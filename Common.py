@@ -1,7 +1,7 @@
 import socket
 from ast import literal_eval
 
-DEBUG = True
+DEBUG = False
 host = '127.0.01' if DEBUG else '10.66.66.1'
 port = 12345     # Arbitrary non-privileged port
 addrTuple = (host, port)
