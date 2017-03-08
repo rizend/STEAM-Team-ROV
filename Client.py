@@ -26,13 +26,14 @@ stick.init()
 
 try:
   while True:
-    event = pygame.event.wait()
+    pygame.event.pump()
     fb = stick.get_axis(1)
     lr = stick.get_axis(0)
     motorL = int((-fb+lr)*250)
     motorR = int((-fb-lr)*250)
-    motorV = stick.get_axis(4)*250
+    motorV = stick.get_axis(4)*-250
     sendObject( (motorL, motorR, motorV, 0) )
+    time.sleep(0.1)
 except KeyboardInterrupt:
   stick.quit()
   pygame.quit()
