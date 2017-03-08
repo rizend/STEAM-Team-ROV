@@ -13,6 +13,7 @@ else:
 #client socket, connects to server
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #socket object
 s.connect(Common.addrTuple) #connect to server
+s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 
 def sendObject(obj):
   global s
