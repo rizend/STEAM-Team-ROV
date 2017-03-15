@@ -43,7 +43,7 @@ def strit():
 
 def setAll(speeds):
   for i in range(0,len(motors)):
-    setMotorSpeed(motors[i], speeds[i])
+    setMotorSpeed(motors[i], 0 if speeds[i]<0 else speeds[i])
   '''print("set motors to ", strit())'''
 
 def stopAll():
